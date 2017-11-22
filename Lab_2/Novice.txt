@@ -1,0 +1,28 @@
+Novice:
+* Создайте файл, имя которого начинается с точки: touch .temp
+* Скрытые файлы и директории в домашней директории:
+.
+..
+.CFUserTextEncoding
+.DS_Store
+.IdentityService
+.ServiceHub
+.Trash
+.android
+.bash_history
+.bash_profile
+.bash_sessions
+.config
+.idlerc
+.lesshst
+.local
+.mono
+.ssh
+.subversion
+.temp
+.templateengine
+.viminfo
+.wget-hsts
+* Принцип поиска find по скрытым файлам и директориям:
+find .  будет искать везде
+find *  проигнорирует скрытые папки на текущем уровне
