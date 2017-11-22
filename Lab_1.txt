@@ -1,0 +1,59 @@
+Novice:
+* Создайте директории, файла, их перемещение, копирование и удаление:
+cd Desktop/
+mkdir Temp1
+touch Temp
+mv Temp Temp1
+cd Temp1/
+cp Temp ~/Desktop/
+cd Desktop/
+rm -rf Temp1
+rm Temp
+* Полный путь до домашней директории: /Users/beryanow
+* Команда cd без параметров: возвращает в домашнюю директорию
+* Команда cat соединяет и выводит файлы -> чтение предыдущих команд возможно; команда less позволяет просматривать длинные тексты, которые не вмещаются на одном экране -> текст накладывается на все предыдущие записи в терминале так, что их становится не видно
+
+Advanced:
+* Найти все строки "friday" в большом текстовом файле: grep -ci friday crusoe.txt (147 строк)
+* С помощью > и >> записать в текстовый файл фразу «Hello world»: echo "Hello World" >> crusoe.txt (записывает в конец файла), echo "Hello World" > crusoe.txt (записывает в файл с предварительной его очисткой)
+* Вывести в файл список файлов в текущей директории: ls > ~/Desktop/crusoe.txt
+* Найти все файлы *.txt на всём диске: find / -name "*.txt"
+
+Expert:
+* Найти количество упоминаний слова “Friday” в большом текстовом файле (360 упоминаний): 
+Содержимое what_to_do.txt:
+BEGIN { m = 0;}
+{  
+for (i = 0; i < NF; i++) {
+if ($i ~ /Friday/) m = m + 1;
+}
+}
+END { print(m) }
+Команда: awk -f what_to_do.txt crusoe.txt
+* Заменить в текстовом файле все слова “Friday” на “Saturday”:
+Команда:
+unset LANG
+sed -i '' 's/Friday/Saturday/g' crusoe.txt 
+* Подсчитать сумму чисел по столбцам :
+Содержимое what_to_do.txt:
+BEGIN { p = 0; z = 0}
+{ 
+p += $1; 
+z += $2; 
+}
+END { print(p, z) }
+Содержимое values.txt: входные значения из таблицы
+Команда: awk -f what_to_do.txt values.txt
+* Вывести строку, содержащую больше всего чисел.
+Содержимое what_to_do.txt:
+BEGIN { p = 0;}
+{  
+if (NF > p) {
+p = NF;
+m = $0;
+}
+
+}
+END { print(m) }
+Содержимое values.txt: входные значения из таблицы
+Команда: awk -f what_to_do.txt values.txt
