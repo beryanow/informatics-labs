@@ -1,0 +1,3 @@
+BEGIN {p = 0;}
+{if (NF > p) {p = NF; m = $0;}}
+END {print(m)}

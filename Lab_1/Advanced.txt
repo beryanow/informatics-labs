@@ -1,5 +1,0 @@
-Advanced:
-* Найти все строки "friday" в большом текстовом файле: grep -ci friday crusoe.txt (147 строк)
-* С помощью > и >> записать в текстовый файл фразу «Hello world»: echo "Hello World" >> crusoe.txt (записывает в конец файла), echo "Hello World" > crusoe.txt (записывает в файл с предварительной его очисткой)
-* Вывести в файл список файлов в текущей директории: ls > ~/Desktop/crusoe.txt
-* Найти все файлы *.txt на всём диске: find / -name "*.txt"

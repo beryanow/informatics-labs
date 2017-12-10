@@ -9,11 +9,13 @@ if ($i ~ /Friday/) m = m + 1;
 }
 END { print(m) }
 Команда: awk -f what_to_do.txt crusoe.txt
+
 * Заменить в текстовом файле все слова “Friday” на “Saturday”:
 Команда:
 unset LANG
 sed -i '' 's/Friday/Saturday/g' crusoe.txt 
-* Подсчитать сумму чисел по столбцам :
+
+* Подсчитать сумму чисел по столбцам:
 Содержимое what_to_do.txt:
 BEGIN { p = 0; z = 0}
 { 
@@ -23,7 +25,8 @@ z += $2;
 END { print(p, z) }
 Содержимое values.txt: входные значения из таблицы
 Команда: awk -f what_to_do.txt values.txt
-* Вывести строку, содержащую больше всего чисел.
+
+* Вывести строку, содержащую больше всего чисел:
 Содержимое what_to_do.txt:
 BEGIN { p = 0;}
 {  

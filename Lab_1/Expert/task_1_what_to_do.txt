@@ -1,0 +1,7 @@
+BEGIN { m = 0;}
+{  
+for (i = 1; i <= NF; i++) {
+if ($i ~ /Friday/) m = m + 1;
+}
+}
+END { print(m) }
