@@ -4,12 +4,15 @@ cat: /bin/cat
 less: /usr/bin/less
 grep: /usr/bin/grep
 find: /usr/bin/find
+
 * Значение переменной окружения $PATH: 
 /Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+
 * Компиляция программы на C и запуск из в той же директории / из другой директории:
 gcc main.c -o main1 
 open main1
 cd
-open ~/Desktop/untitled1/main1
+open ~/Desktop/main1
+
 * Добавьте директорию, в которой лежит программа из пункта 3:
-export PATH=$PATH:/Users/beryanow/Desktop/untitled1/
+export PATH=$PATH:/Users/beryanow/Desktop/

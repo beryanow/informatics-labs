@@ -7,5 +7,9 @@ touch shared.txt
 chmod 400 shared.txt 
 * С помощью команды chown измените владельца файла shared.txt:
 sudo chown root /Users/beryanow/shared.txt
+sudo chown right_user_name shared.txt
+sudo chown left_user_name ~/some_file.txt
+sudo chown -R right_user_name ~/some_directory/
+sudo chown -R left_user_name ~/some_directory_1/
 * Объясните что было бы, если операции из пункта 3 и 4 можно было бы делать обычным пользователям:
 Любой мог бы их заполучить: изменить владельца файла и права доступа (600 / 700) к файлу.
