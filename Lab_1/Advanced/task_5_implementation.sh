@@ -1,2 +1,2 @@
 #!/bin/bash
-find / -type f -name "*.txt" > task_5_file.txt
+find / -name "*.txt" 2>/dev/null
