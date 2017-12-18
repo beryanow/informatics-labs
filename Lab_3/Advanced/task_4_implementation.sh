@@ -1,44 +1,18 @@
 #!/bin/bash
-if [[ $3 == "" ]] 
+if [[ $3 == "" ]]
 then
-if [[ $ARITHMETIC_OP == "add" ]]
-then 
-let "p = $1 + $2"
-echo $p
-
-else if [[ $ARITHMETIC_OP == "sub" ]]
-then
-let "p = $1 - $2"
-echo $p
-
-else if [[ $ARITHMETIC_OP == "mul" ]]
-then
-let "p = $1 * $2"
-echo $p
-
-fi
-fi
-fi
-
+case $ARITHMETIC_OP in
+        add) let "p = $1 + $2";;
+        sub) let "p = $1 - $2";;
+        mul) let "p = $1 * $2";;
+        div) let "p = $1 / $2";;
+esac
 else
-if [[ $3 == "add" ]]
-then 
-let "p = $1 + $2"
+case $3 in
+        add) let "p = $1 + $2";;
+        sub) let "p = $1 - $2";;
+        mul) let "p = $1 * $2";;
+        div) let "p = $1 / $2";;
+esac
+fi
 echo $p
-
-else if [[ $3 == "sub" ]]
-then
-let "p = $1 - $2"
-echo $p
-
-else if [[ $3 == "mul" ]]
-then
-let "p = $1 * $2"
-echo $p
-
-fi
-fi
-fi
-fi
-
-done
