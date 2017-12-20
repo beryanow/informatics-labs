@@ -1,3 +1,5 @@
 #!/bin/bash
-sudo chown right_user_name shared.txt
-sudo chown left_user_name ~/some_file.txt
+chmod go=rwx shared.txt 
+chmod g=rwx shared.txt 
+chmod u=rwx shared.txt 
+scp /home/students/17200/shshegoleva/informatics/shared.txt beryanov@mephisto:/home/students/17200/beryanov/shared/
